@@ -36,10 +36,11 @@ if uploaded_file is not None:
                             'Sepia / Vintage',
                             'Vignette Effect',
                             'Pencil Sketch',
+                            'Edges'
                          ))
 
     # Define columns for thumbnail images.
-    col1, col2, col3, col4 = st.columns(4)
+    col1, col2, col3, col4, col5 = st.columns(5)
     with col1:
         st.caption('Black and White')
         st.image('filter_bw.jpg')
@@ -51,6 +52,9 @@ if uploaded_file is not None:
         st.image('filter_vignette.jpg')
     with col4:
         st.caption('Pencil Sketch')
+        st.image('filter_pencil_sketch.jpg')
+    with col5:
+        st.caption('Edges')
         st.image('filter_pencil_sketch.jpg')
 
     # Flag for showing output image.
@@ -74,6 +78,8 @@ if uploaded_file is not None:
         ksize = st.slider('Blur kernel size', 1, 11, 5, step=2)
         output = pencil_sketch(img, ksize)
         color = 'GRAY'
+    elif option == 'Edges':
+        output = edge_detector(img)
 
     with output_col:
         if output_flag == 1:

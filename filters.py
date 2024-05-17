@@ -47,3 +47,8 @@ def pencil_sketch(img, ksize=5):
     img_blur = cv2.GaussianBlur(img, (ksize, ksize), 0, 0)
     img_sketch, _ = cv2.pencilSketch(img_blur)
     return img_sketch
+
+@st.cache
+def edge_detector(img):
+    img_edges = cv2.Canny(img, 150, 200)
+    return img_edges
