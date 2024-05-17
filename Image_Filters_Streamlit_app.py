@@ -79,6 +79,7 @@ if uploaded_file is not None:
         color = 'GRAY'
     elif option == 'Edges':
         output = edge_detector(img)
+        color = 'GRAY'
 
     with output_col:
         if output_flag == 1:
