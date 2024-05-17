@@ -1,6 +1,5 @@
 import io
 import base64
-import cv2
 from PIL import Image
 from filters import *
 
@@ -90,7 +89,7 @@ if uploaded_file is not None:
                 result = Image.fromarray(output[:,:,::-1])
             else:
                 result = Image.fromarray(output)
-            # Display link.
+              # Display link.
             st.markdown(get_image_download_link(result,'output.png','Download '+'Output'),
                         unsafe_allow_html=True)
     
