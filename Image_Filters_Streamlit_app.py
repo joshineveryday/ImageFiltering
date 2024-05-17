@@ -78,8 +78,7 @@ if uploaded_file is not None:
         output = pencil_sketch(img, ksize)
         color = 'GRAY'
     elif option == 'Edges':
-        level = st.slider('level', 0, 5, 2)
-        output = vignette(img, level)
+        output = edge_detector(img)
 
     with output_col:
         if output_flag == 1:
